@@ -1,7 +1,7 @@
-﻿using Kamishiro.Utils.DotNetCore.Enums;
+﻿using Kamishiro.Utils.NetStandard.Enums;
 using System.IO;
 
-namespace Kamishiro.Utils.DotNetCore.Azure
+namespace Kamishiro.Utils.NetStandard.Azure
 {
     public interface IAZStorage
     {

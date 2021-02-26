@@ -1,7 +1,7 @@
-﻿using Kamishiro.Utils.DotNetCore.Enums;
+﻿using Kamishiro.Utils.NetStandard.Enums;
 using System.IO;
 
-namespace Kamishiro.Utils.DotNetCore.FileSystem
+namespace Kamishiro.Utils.NetStandard.FileSystem
 {
     public interface IFileSystem
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Kamishiro.Utils.DotNetCore.Google
+namespace Kamishiro.Utils.NetStandard.Google
 {
     public class CalendarEventEqualyCompare : IEqualityComparer<CalendarEvent>
     {

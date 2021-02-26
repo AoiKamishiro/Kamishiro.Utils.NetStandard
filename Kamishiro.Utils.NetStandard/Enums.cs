@@ -1,4 +1,4 @@
-﻿namespace Kamishiro.Utils.DotNetCore.Enums
+﻿namespace Kamishiro.Utils.NetStandard.Enums
 {
     public enum StatusCode
     {

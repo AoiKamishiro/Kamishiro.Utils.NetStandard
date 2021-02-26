@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Kamishiro.Utils.DotNetCore.Google
+namespace Kamishiro.Utils.NetStandard.Google
 {
     public class GCalendar : IGCalendar
     {

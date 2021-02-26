@@ -1,10 +1,10 @@
 ﻿using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
-using Kamishiro.Utils.DotNetCore.Enums;
+using Kamishiro.Utils.NetStandard.Enums;
 using System;
 using System.IO;
 
-namespace Kamishiro.Utils.DotNetCore.Azure
+namespace Kamishiro.Utils.NetStandard.Azure
 {
     public class AZStorage : IAZStorage
     {
@@ -37,6 +37,7 @@ namespace Kamishiro.Utils.DotNetCore.Azure
             }
 
             blobClient.DownloadToAsync(stream).Wait();
+            _ = stream.Seek(0, SeekOrigin.Begin);
 
             Console.WriteLine("Finished downloading Blob from {0}/{1}.", containerName, blobName);
             return StatusCode.OK;
@@ -56,6 +57,7 @@ namespace Kamishiro.Utils.DotNetCore.Azure
                 Console.WriteLine("An error occurred while retrieving the Blob. " + e.Message);
                 return StatusCode.Error;
             }
+            _ = stream.Seek(0, SeekOrigin.Begin);
             blobClient.UploadAsync(stream, true).Wait();
             BlobProperties blobProperties = blobClient.GetProperties();
             BlobHttpHeaders blobHttpHeaders = new BlobHttpHeaders

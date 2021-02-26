@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Kamishiro.Utils.DotNetCore.Google
+namespace Kamishiro.Utils.NetStandard.Google
 {
     public class CalendarEvent
     {

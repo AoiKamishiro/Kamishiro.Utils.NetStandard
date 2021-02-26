@@ -1,8 +1,8 @@
-﻿using Kamishiro.Utils.DotNetCore.Enums;
+﻿using Kamishiro.Utils.NetStandard.Enums;
 using System;
 using System.IO;
 
-namespace Kamishiro.Utils.DotNetCore.FileSystem
+namespace Kamishiro.Utils.NetStandard.FileSystem
 {
     public class FileSystem : IFileSystem
     {
@@ -38,7 +38,7 @@ namespace Kamishiro.Utils.DotNetCore.FileSystem
             FileStream fileStream = File.Open(FilePath, FileMode.Open);
             try
             {
-                fileStream.Seek(0, SeekOrigin.Begin);
+                _ = fileStream.Seek(0, SeekOrigin.Begin);
                 fileStream.CopyTo(stream);
                 Console.WriteLine("The file was successfully loaded. \"{0}\"", FullPath);
                 fileStream.Dispose();
@@ -79,8 +79,8 @@ namespace Kamishiro.Utils.DotNetCore.FileSystem
             }
             try
             {
-                stream.Seek(0, SeekOrigin.Begin);
                 stream.CopyTo(fileStream);
+                _ = stream.Seek(0, SeekOrigin.Begin);
                 Console.WriteLine("The file was successfully saved. \"{0}\"", FullPath);
                 fileStream.Dispose();
                 return StatusCode.OK;
